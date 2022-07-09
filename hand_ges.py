@@ -1,8 +1,10 @@
+from time import time
 from cv2 import copyTo
 from cvzone.HandTrackingModule import HandDetector
 import cv2
 import asyncio,websockets
 import threading
+import time
 
 class VideoCap():
     #initialize function
@@ -35,7 +37,6 @@ class VideoCap():
                         print(s)
                 except:
                     print("No Hands")
-                
                 
                 if k == 1:
                     break
