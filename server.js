@@ -9,10 +9,9 @@ wss.on("connection", function connection(ws) {
   console.log("Client connected");
   console.log(wss.clients.size);
   ws.on("message", function message(data, isBinary) {
-    console.log(data, isBinary);
     wss.clients.forEach(function each(client) {
       if (client.readyState === WebSocket.OPEN) {
-        client.send(data + "sd", { binary: isBinary });
+        client.send(data, { binary: isBinary });
       }
     });
   });
